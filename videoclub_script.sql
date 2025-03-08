@@ -451,9 +451,9 @@ create view peliculas_disponibles as
 
 
 create view peliculas_disponibles_all as
-	select
+	select 
 		p.titulo as pelicula, 
-	    count(cp.id) - count(pr.id_copia) AS copias_disponibles,
+		count(cp.id) - count(pr.id_copia) as copias_disponibles,
 	    count(cp.id) as copias_totales
 	from pelicula p
 	inner join copia_pelicula cp on p.id = cp.id_pelicula
